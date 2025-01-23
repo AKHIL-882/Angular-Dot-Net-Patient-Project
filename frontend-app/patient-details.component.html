@@ -1,0 +1,15 @@
+<!-- Filename: patient-details.component.html -->
+<div class="flex justify-center">
+  <div class="w-full max-w-lg">
+    <h2 class="text-center text-2xl font-bold mb-6">Patient Details for ID: {{patientId}}</h2>
+    <h3 class="text-lg font-semibold">Recommendations</h3>
+    <ul class="list-disc">
+      <li *ngFor="let recommendation of recommendations">
+        <label>
+          <input type="checkbox" [checked]="recommendation.completed" (change)="toggleCompleted(recommendation)" />
+          {{recommendation.description}} <span *ngIf="recommendation.completed" class="text-green-500">(Completed)</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
